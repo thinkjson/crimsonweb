@@ -1,0 +1,7 @@
+<div class="row">
+	<h1 ng-bind="reference" class="col-md-12"></h1>
+
+	<div class="alert alert-danger" ng-if="error" ng-bind="error"></div>
+
+	<div class="col-md-12" ng-bind-html="$sce.trustAsHtml(passage.text)">Loading...</div>
+</div>

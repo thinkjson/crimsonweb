@@ -1,0 +1,11 @@
+* {
+	font-family: 'Crimson Text', serif;
+}
+
+.view {
+	font-size: 18px;
+}
+
+.chapter-num {
+	display: none;
+}
