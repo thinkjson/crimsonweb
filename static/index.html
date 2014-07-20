@@ -8,12 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
         <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="/css/main.css">
@@ -22,11 +16,32 @@
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="/">Crimson</a>
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Crimson</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">
+                            <i class="glyphicon glyphicon-play"></i>
+                            <span class="visible-desktop">Start</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/navigate">
+                            <i class="glyphicon glyphicon-filter"></i>
+                            <span class="visible-desktop">Navigate</span>
+                        </a>
+                    </li>
+                    <li ng-if="$routeParams.reference">
+                        <a href="/explore/{{ $routeParams.reference }}">
+                            <i class="glyphicon glyphicon-filter"></i>
+                            <span class="visible-desktop">Explore</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
 
         <div class="container view" ng-view>

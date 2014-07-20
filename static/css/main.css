@@ -2,10 +2,36 @@
 	font-family: 'Crimson Text', serif;
 }
 
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
 .view {
 	font-size: 18px;
 }
 
 .chapter-num {
 	display: none;
+}
+
+.navbar-inverse {
+	background: #711;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #fff;
+	font-size: 22px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #eee;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	background-color: #400;
+}
+
+.navbar .nav li {
+	line-height: 30px;
 }

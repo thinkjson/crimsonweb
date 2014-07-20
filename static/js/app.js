@@ -8,7 +8,22 @@ angular.module('crimson', [
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
+    $routeProvider.when('/',{
+        templateUrl: '/partials/start.html', 
+        controller: 'StartController'
+    });
+
+    $routeProvider.when('/navigate',{
+        templateUrl: '/partials/navigate.html', 
+        controller: 'NavigateController'
+    });
+
     $routeProvider.when('/read/:reference',{
+        templateUrl: '/partials/reader.html', 
+        controller: 'ReaderController'
+    });
+
+    $routeProvider.when('/explore/:reference',{
         templateUrl: '/partials/reader.html', 
         controller: 'ReaderController'
     });
