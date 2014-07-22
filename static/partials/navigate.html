@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="alert alert-danger" ng-if="error" ng-bind="error"></div>
+
+	<!-- Categories -->
+	<div class="col-md-6">
+		<h1 ng-repeat="category in books.categories" ng-bind="category.name" ng-click="select('category', $index)" ng-show="selected.category === null || $index == selected.category"></h1>
+	</div>
+
+	<!-- Books -->
+	<div ng-show="selected.category !== null" class="col-md-6">
+		<h2 ng-repeat="book in books.categories[selected.category].books" ng-show="selected.book === null || $index == selected.book" ng-bind="book.name" ng-click="select('book', $index)"></h2>
+	</div>
+
+	<!-- Chapter numbers -->
+	<div class="col-md-12" ng-show="selected.category !== null && selected.book !== null">
+		<span ng-repeat="n in _.range(1, books.categories[selected.category].books[selected.book].chapters + 1)">
+			<a class="btn btn-default col-sm-2" ng-bind="n" href="/read/{{ books.categories[selected.category].books[selected.book].name }} {{ n }}"></a>
+		</span>
+	</div>
+</div>
