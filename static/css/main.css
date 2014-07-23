@@ -1,10 +1,15 @@
-* {
-	font-family: 'Crimson Text', serif;
-}
-
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Roboto', serif;
+}
+
+a, a:hover {
+	color: #333;
+}
+
+.reader {
+	font-family: 'Crimson Text', serif;
 }
 
 .view {
@@ -16,7 +21,7 @@ body {
 }
 
 .navbar-inverse {
-	background: #711;
+	background: #990511;
 }
 
 .navbar-inverse .navbar-brand {
@@ -34,4 +39,14 @@ body {
 
 .navbar .nav li {
 	line-height: 30px;
+}
+
+.nav-pills>li>a {
+	border-radius: 0;
+}
+
+@media (max-width: 768px) {
+	.navbar-brand {
+		padding-left: 0;
+	}
 }

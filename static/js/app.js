@@ -31,4 +31,7 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
     $routeProvider.otherwise({
         redirectTo: '/read/John 1'
     });
+}])
+.run(['$rootScope', function($rootScope) {
+    $rootScope.reference = null;
 }]);

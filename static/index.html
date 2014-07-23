@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="/css/main.css">
 
@@ -17,27 +18,22 @@
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Crimson</a>
-                </div>
+                <a class="navbar-brand" href="/">Crimson</a>
 
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav nav-pills pull-right">
                     <li>
                         <a href="/">
                             <i class="glyphicon glyphicon-play"></i>
-                            <span class="visible-md-block visible-lg-block">Start</span>
                         </a>
                     </li>
                     <li>
                         <a href="/navigate">
                             <i class="glyphicon glyphicon-filter"></i>
-                            <span class="visible-md-block visible-lg-block">Navigate</span>
                         </a>
                     </li>
                     <li ng-if="$routeParams.reference">
                         <a href="/explore/{{ $routeParams.reference }}">
                             <i class="glyphicon glyphicon-filter"></i>
-                            <span class="visible-md-block visible-lg-block">Explore</span>
                         </a>
                     </li>
                 </ul>
@@ -58,6 +54,7 @@
 
         <!-- application.js -->
         <script src="/js/app.js"></script>
+        <script src="/js/start/StartController.js"></script>
         <script src="/js/reader/ReaderService.js"></script>
         <script src="/js/reader/ReaderController.js"></script>
         <script src="/js/navigate/NavigateService.js"></script>

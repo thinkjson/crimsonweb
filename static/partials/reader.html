@@ -1,7 +1,12 @@
 <div class="row">
-	<h1 ng-bind="reference" class="col-md-12"></h1>
+	<h1 class="col-md-12" ng-bind="reference"></h1>
 
 	<div class="alert alert-danger" ng-if="error" ng-bind="error"></div>
 
-	<div class="col-md-12" ng-bind-html="$sce.trustAsHtml(passage.text)">Loading...</div>
+	<div class="col-md-12 reader" ng-bind-html="$sce.trustAsHtml(passage.text)">Loading...</div>
+
+	<h3 class="col-md-3 text-center"><a href="/explore/{{ reference }}">Explore similar</a></h3>
+	<h3 class="col-md-3 text-center"></h3>
+	<h3 class="col-md-3 text-center"></h3>
+	<h3 class="col-md-3 text-center"><a href="/read/{{ nextChapter }}">Next chapter</a></h3>
 </div>
