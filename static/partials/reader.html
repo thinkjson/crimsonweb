@@ -5,8 +5,7 @@
 
 	<div class="col-md-12 reader" ng-bind-html="$sce.trustAsHtml(passage.text)">Loading...</div>
 
-	<h3 class="col-md-3 text-center"><a href="/explore/{{ reference }}">Explore similar</a></h3>
-	<h3 class="col-md-3 text-center"></h3>
-	<h3 class="col-md-3 text-center"></h3>
-	<h3 class="col-md-3 text-center"><a href="/read/{{ nextChapter }}">Next chapter</a></h3>
+	<h3 class="col-xs-4 text-center"><a href="/read/{{ previousChapter }}"><i class="glyphicon glyphicon-chevron-left"></i></a></h3>
+	<h3 class="col-xs-4 text-center"><a href="/explore/{{ reference }}"><i class="glyphicon glyphicon-random"></i></a></h3>
+	<h3 class="col-xs-4 text-center"><a href="/read/{{ nextChapter }}"><i class="glyphicon glyphicon-chevron-right"></i></a></h3>
 </div>

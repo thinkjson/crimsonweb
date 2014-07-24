@@ -8,6 +8,11 @@ a, a:hover {
 	color: #333;
 }
 
+a:hover {
+	text-shadow: #222 0 0 8px;
+	text-decoration: none;
+}
+
 .reader {
 	font-family: 'Crimson Text', serif;
 }
@@ -49,4 +54,8 @@ a, a:hover {
 	.navbar-brand {
 		padding-left: 0;
 	}
+}
+
+.tile {
+	padding: 50px 0;
 }

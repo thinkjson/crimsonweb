@@ -15,7 +15,11 @@ angular.module('crimson').controller('ReaderController', ['$scope', '$routeParam
         $scope.error = 'Could not fetch passage';
     });
 
+    NavigateService.previous($scope.reference).then(function(reference) {
+    	$scope.previousChapter = reference;
+    });
+
     NavigateService.next($scope.reference).then(function(reference) {
-    	$scope.nextChapter = reference;
-    })
+        $scope.nextChapter = reference;
+    });
 }]);

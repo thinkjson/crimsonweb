@@ -33,6 +33,26 @@ angular.module('crimson').service('NavigateService', ['$http', '$q', function($h
 		return deferred.promise;
 	};
 
+	this.previous = function(reference) {
+		var deferred = $q.defer();
+		this.get().then(function(books) {
+			var matches = reference.match(/(.*) (\d+)/);
+			var book = _.findIndex(flatBooks, {name: matches[1]});
+			var chapter = parseInt(matches[2]);
+
+			if (chapter == 1) {
+				var previousBook = flatBooks[(book - 1) % flatBooks.length];
+				deferred.resolve(previousBook.name + ' ' + previousBook.chapters);			
+			} else {
+				deferred.resolve(matches[1] + ' ' + (chapter - 1));
+			}
+		}, function() {
+			deferred.resolve('John 1');
+		});
+
+		return deferred.promise;
+	}
+
 	this.next = function(reference) {
 		var deferred = $q.defer();
 		this.get().then(function(books) {
@@ -47,6 +67,21 @@ angular.module('crimson').service('NavigateService', ['$http', '$q', function($h
 			}
 		}, function() {
 			deferred.resolve('John 1');
+		});
+
+		return deferred.promise;
+	}
+
+	this.random = function(genre) {
+		var deferred = $q.defer();
+
+		this.get().then(function(response) {
+			var category = _.find(response.data.categories, {name: genre});
+			var book = _.sample(category.books);
+			var chapter = Math.ceil(Math.random() * book.chapters);
+			deferred.resolve(book.name + ' ' + chapter);
+		}, function() {
+			deferred.reject();
 		});
 
 		return deferred.promise;
