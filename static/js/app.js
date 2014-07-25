@@ -20,7 +20,8 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
 
     $routeProvider.when('/read/:reference',{
         templateUrl: '/partials/reader.html', 
-        controller: 'ReaderController'
+        controller: 'ReaderController',
+        reloadOnSearch: false
     });
 
     $routeProvider.when('/explore/:reference',{
@@ -33,5 +34,7 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
     });
 }])
 .run(['$rootScope', function($rootScope) {
-    $rootScope.reference = null;
+    $rootScope.$on('$routeChangeSuccess', function() {
+        scrollTo(0,0);
+    });
 }]);

@@ -3,9 +3,11 @@
 
 	<div class="alert alert-danger" ng-if="error" ng-bind="error"></div>
 
-	<div class="col-md-12 reader" ng-bind-html="$sce.trustAsHtml(passage.text)">Loading...</div>
+	<div class="col-md-12 reader" ng-bind-html="text">Loading...</div>
 
-	<h3 class="col-xs-4 text-center"><a href="/read/{{ previousChapter }}"><i class="glyphicon glyphicon-chevron-left"></i></a></h3>
-	<h3 class="col-xs-4 text-center"><a href="/explore/{{ reference }}"><i class="glyphicon glyphicon-random"></i></a></h3>
-	<h3 class="col-xs-4 text-center"><a href="/read/{{ nextChapter }}"><i class="glyphicon glyphicon-chevron-right"></i></a></h3>
+	<div class="col-md-12 copyright">Scripture taken from The Holy Bible, English Standard Version. Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.</div>
+
+	<h3 class="col-xs-4 text-center"><a ng-href="/read/{{ previousChapter }}"><i class="glyphicon glyphicon-chevron-left"></i></a></h3>
+	<h3 class="col-xs-4 text-center"><a ng-href="/explore/{{ reference }}"><i class="glyphicon glyphicon-random"></i></a></h3>
+	<h3 class="col-xs-4 text-center"><a ng-href="/read/{{ nextChapter }}"><i class="glyphicon glyphicon-chevron-right"></i></a></h3>
 </div>
