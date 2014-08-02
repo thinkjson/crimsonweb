@@ -10,7 +10,7 @@ def get_passage(passage):
 	"&include-passage-references=false" + \
 	"&include-short-copyright=false" + \
 	"&include-subheadings=false" + \
-	"&include-verse-numbers=false").format(
+	"&include-verse-numbers=true").format(
 		passage=passage)
 	response = requests.get(url)
 	return response.text

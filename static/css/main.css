@@ -63,3 +63,8 @@ a:hover {
 .tile {
 	padding: 50px 0;
 }
+
+.verse-num {
+	font-size: 65%;
+	color: #666;
+}
