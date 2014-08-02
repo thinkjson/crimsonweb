@@ -9,6 +9,7 @@ import json
 import logging
 import os
 import utils
+import time
 
 app = Flask('crimson')
 cache = Cache(app, config={
@@ -36,9 +37,10 @@ def read(reference):
 	if passage is None:
 		cached = False
 		passage = get_passage(reference)
-		cache.set(cache_key, passage)
+		cache.set(cache_key, passage, 86400)
 	response = jsonify({
 		"cached": cached,
+		"fetched": time.time() * 1000,
 		"text": passage
 	})
 	response.cache_control.max_age = 300

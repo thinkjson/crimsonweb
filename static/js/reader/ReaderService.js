@@ -1,6 +1,15 @@
 'use strict';
 
 angular.module('crimson').service('ReaderService', ['$http', '$q', function($http, $q) {
+	var expired = function(cacheTime) {
+		var timeSinceIngest = (new Date()).getTime() - parseInt(cacheTime);
+		if (timeSinceIngest > 86400000) {
+			return true;
+		}
+
+		return false;
+	}
+
 	this.get = function(reference) {
 		var deferred = $q.defer();
 
@@ -13,7 +22,9 @@ angular.module('crimson').service('ReaderService', ['$http', '$q', function($htt
 		// If not available, hit the API
 		if (cached) {
 			deferred.resolve(cached);
-		} else {
+		}
+
+		if (! cached || ! cached.data.fetched || expired(cached.data.fetched)) {
 			$http({
 				method: 'GET',
 				url: '/api/read/' + reference
@@ -21,7 +32,7 @@ angular.module('crimson').service('ReaderService', ['$http', '$q', function($htt
 				localStorage['passage_' + reference] = JSON.stringify(response);
 				deferred.resolve(response);
 			}, function() {
-				deferred.reject()
+				deferred.reject();
 			});
 		}
 
