@@ -1,7 +1,12 @@
 body {
     padding-top: 50px;
     padding-bottom: 50px;
-    font-family: 'Roboto', serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+h1,h2,h3,h4 {
+	font-weight: 100;
 }
 
 a, a:hover {
@@ -71,4 +76,8 @@ a:hover {
 .verse-num {
 	font-size: 65%;
 	color: #666;
+}
+
+.jumbotron p {
+	font-weight: 300;
 }
