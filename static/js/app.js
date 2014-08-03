@@ -37,4 +37,6 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
     $rootScope.$on('$routeChangeSuccess', function() {
         scrollTo(0,0);
     });
+
+    $rootScope.localStorage = localStorage;
 }]);
