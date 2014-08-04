@@ -20,7 +20,7 @@ angular.module('crimson').controller('SettingsController', ['$scope', function($
 	}
 
 	$scope.toggleVerseNumbers = function() {
-		localStorage.hideVerseNumbers = localStorage.hideVerseNumbers == 'true' ? 'false' : 'true';
+		localStorage.hideVerseNumbers = localStorage.hideVerseNumbers === 'true' ? 'false' : 'true';
 	}
 
 }]);
