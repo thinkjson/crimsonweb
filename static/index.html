@@ -20,18 +20,13 @@
 
                 <ul class="nav navbar-nav nav-pills pull-right">
                     <li>
-                        <a href="/">
-                            <i class="glyphicon glyphicon-home"></i>
+                        <a href="#" ng-click="localStorage.settings = localStorage.settings === 'true' ? 'false' : 'true'">
+                            <i class="glyphicon glyphicon-cog"></i>
                         </a>
                     </li>
                     <li>
                         <a href="/navigate">
                             <i class="glyphicon glyphicon-th-list"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" ng-click="localStorage.settings = localStorage.settings === 'true' ? 'false' : 'true'">
-                            <i class="glyphicon glyphicon-cog"></i>
                         </a>
                     </li>
                 </ul>

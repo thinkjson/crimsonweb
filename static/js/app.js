@@ -85,7 +85,7 @@ angular.module('crimson').controller('ReaderController', ['$scope', '$routeParam
     $scope.passage = {};
     $scope.error = null;
 
-    $scope.text = null;
+    $scope.text = 'Loading...';
 
     $scope.nextChapter = 'John 1';
 

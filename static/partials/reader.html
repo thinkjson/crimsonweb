@@ -1,9 +1,9 @@
 <div class="row">
 	<h1 class="col-md-12" ng-bind="reference"></h1>
 
-	<div class="alert alert-danger" ng-if="error" ng-bind="error"></div>
+	<div class="alert alert-danger col-md-12" ng-if="error" ng-bind="error"></div>
 
-	<div class="col-md-12 reader" ng-bind-html="text" ng-style="{'font-size': localStorage.fontSize + 'px'}">Loading...</div>
+	<div class="col-md-12 reader" ng-bind-html="text" ng-style="{'font-size': localStorage.fontSize + 'px'}"></div>
 
 	<style type="text/css" ng-if="localStorage.hideVerseNumbers === 'true'">.verse-num { display: none;}</style>
 	<div class="col-md-12 copyright">Scripture taken from The Holy Bible, English Standard Version. Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.</div>

@@ -3,6 +3,7 @@ body {
     padding-bottom: 50px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    color: #111;
 }
 
 h1,h2,h3,h4 {
@@ -40,6 +41,10 @@ a:hover {
 
 .settings {
 	background: #ccc;
+}
+
+.navbar {
+	border: 0;
 }
 
 .navbar-inverse .navbar-brand {
