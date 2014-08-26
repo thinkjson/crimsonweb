@@ -5,22 +5,27 @@
             "books": [
                 {
                     "name": "Genesis",
+                    "osis": "Gen",
                     "chapters": 50
                 },
                 {
                     "name": "Exodus",
+                    "osis": "Exod",
                     "chapters": 40
                 },
                 {
                     "name": "Leviticus",
+                    "osis": "Lev",
                     "chapters": 27
                 },
                 {
                     "name": "Numbers",
+                    "osis": "Num",
                     "chapters": 36
                 },
                 {
                     "name": "Deuteronomy",
+                    "osis": "Deut",
                     "chapters": 34
                 }
             ]
@@ -30,50 +35,62 @@
             "books": [
                 {
                     "name": "Joshua",
+                    "osis": "Josh",
                     "chapters": 24
                 },
                 {
                     "name": "Judges",
+                    "osis": "Judg",
                     "chapters": 21
                 },
                 {
                     "name": "Ruth",
+                    "osis": "Ruth",
                     "chapters": 4
                 },
                 {
                     "name": "1 Samuel",
+                    "osis": "1Sam",
                     "chapters": 31
                 },
                 {
                     "name": "2 Samuel",
+                    "osis": "2Sam",
                     "chapters": 24
                 },
                 {
                     "name": "1 Kings",
+                    "osis": "1Kgs",
                     "chapters": 22
                 },
                 {
                     "name": "2 Kings",
+                    "osis": "2Kgs",
                     "chapters": 25
                 },
                 {
                     "name": "1 Chronicles",
+                    "osis": "1Chr",
                     "chapters": 29
                 },
                 {
                     "name": "2 Chronicles",
+                    "osis": "2Chr",
                     "chapters": 36
                 },
                 {
                     "name": "Ezra",
+                    "osis": "Ezra",
                     "chapters": 10
                 },
                 {
                     "name": "Nehemiah",
+                    "osis": "Neh",
                     "chapters": 13
                 },
                 {
                     "name": "Esther",
+                    "osis": "Esth",
                     "chapters": 10
                 }
             ]
@@ -83,22 +100,27 @@
             "books": [
                 {
                     "name": "Job",
+                    "osis": "Job",
                     "chapters": 42
                 },
                 {
                     "name": "Psalms",
+                    "osis": "Ps",
                     "chapters": 150
                 },
                 {
                     "name": "Proverbs",
+                    "osis": "Prov",
                     "chapters": 31
                 },
                 {
                     "name": "Ecclesiastes",
+                    "osis": "Eccl",
                     "chapters": 12
                 },
                 {
                     "name": "Song of Solomon",
+                    "osis": "Song",
                     "chapters": 8
                 }
             ]
@@ -108,70 +130,87 @@
             "books": [
                 {
                     "name": "Isaiah",
+                    "osis": "Isa",
                     "chapters": 66
                 },
                 {
                     "name": "Jeremiah",
+                    "osis": "Jer",
                     "chapters": 52
                 },
                 {
                     "name": "Lamentations",
+                    "osis": "Lam",
                     "chapters": 5
                 },
                 {
                     "name": "Ezekiel",
+                    "osis": "Ezel",
                     "chapters": 48
                 },
                 {
                     "name": "Daniel",
+                    "osis": "Dan",
                     "chapters": 12
                 },
                 {
                     "name": "Hosea",
+                    "osis": "Hos",
                     "chapters": 14
                 },
                 {
                     "name": "Joel",
+                    "osis": "Joel",
                     "chapters": 3
                 },
                 {
                     "name": "Amos",
+                    "osis": "Amos",
                     "chapters": 9
                 },
                 {
                     "name": "Obadiah",
+                    "osis": "Obad",
                     "chapters": 1
                 },
                 {
                     "name": "Jonah",
+                    "osis": "Jonah",
                     "chapters": 4
                 },
                 {
                     "name": "Micah",
+                    "osis": "Mic",
                     "chapters": 7
                 },
                 {
                     "name": "Nahum",
+                    "osis": "Nah",
                     "chapters": 3
                 },
                 {
                     "name": "Habakkuk",
+                    "osis": "Hab",
                     "chapters": 3
                 },
                 {
                     "name": "Zephaniah",
+                    "osis": "Zeph",
                     "chapters": 3
                 },
                 {
                     "name": "Haggai",
+                    "osis": "Hag",
                     "chapters": 2
                 },
                 {
                     "name": "Zechariah",
+                    "osis": "Zech",
                     "chapters": 14
                 },
                 {
                     "name": "Malachi",
+                    "osis": "Mal",
                     "chapters": 4
                 }
             ]
@@ -181,22 +220,27 @@
             "books": [
                 {
                     "name": "Matthew",
+                    "osis": "Matt",
                     "chapters": 28
                 },
                 {
                     "name": "Mark",
+                    "osis": "Mark",
                     "chapters": 16
                 },
                 {
                     "name": "Luke",
+                    "osis": "Luke",
                     "chapters": 24
                 },
                 {
                     "name": "John",
+                    "osis": "John",
                     "chapters": 21
                 },
                 {
                     "name": "Acts",
+                    "osis": "Acts",
                     "chapters": 28
                 }
             ]
@@ -206,90 +250,112 @@
             "books": [
                 {
                     "name": "Romans",
+                    "osis": "Rom",
                     "chapters": 16
                 },
                 {
                     "name": "1 Corinthians",
+                    "osis": "1Cor",
                     "chapters": 16
                 },
                 {
                     "name": "2 Corinthians",
+                    "osis": "2Cor",
                     "chapters": 13
                 },
                 {
                     "name": "Galatians",
+                    "osis": "Gal",
                     "chapters": 6
                 },
                 {
                     "name": "Ephesians",
+                    "osis": "Eph",
                     "chapters": 6
                 },
                 {
                     "name": "Philippians",
+                    "osis": "Phil",
                     "chapters": 4
                 },
                 {
                     "name": "Colossians",
+                    "osis": "Col",
                     "chapters": 4
                 },
                 {
                     "name": "1 Thessalonians",
+                    "osis": "1Thess",
                     "chapters": 5
                 },
                 {
                     "name": "2 Thessalonians",
+                    "osis": "2Thess",
                     "chapters": 3
                 },
                 {
                     "name": "1 Timothy",
+                    "osis": "1Tim",
                     "chapters": 6
                 },
                 {
                     "name": "2 Timothy",
+                    "osis": "2Tim",
                     "chapters": 4
                 },
                 {
                     "name": "Titus",
+                    "osis": "Titus",
                     "chapters": 3
                 },
                 {
                     "name": "Philemon",
+                    "osis": "Phim",
                     "chapters": 1
                 },
                 {
                     "name": "Hebrews",
+                    "osis": "Heb",
                     "chapters": 13
                 },
                 {
                     "name": "James",
+                    "osis": "Jas",
                     "chapters": 5
                 },
                 {
                     "name": "1 Peter",
+                    "osis": "1Pet",
                     "chapters": 5
                 },
                 {
                     "name": "2 Peter",
+                    "osis": "2Pet",
                     "chapters": 3
                 },
                 {
                     "name": "1 John",
+                    "osis": "1John",
                     "chapters": 5
                 },
                 {
                     "name": "2 John",
+                    "osis": "2John",
                     "chapters": 1
                 },
                 {
                     "name": "3 John",
+                    "osis": "3John",
                     "chapters": 1
                 },
                 {
                     "name": "Jude",
+                    "osis": "Jude",
                     "chapters": 1
                 },
                 {
                     "name": "Revelation",
+                    "osis": "Rev",
                     "chapters": 22
                 }
             ]

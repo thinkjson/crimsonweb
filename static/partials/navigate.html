@@ -14,7 +14,7 @@
 	<!-- Chapter numbers -->
 	<div class="col-md-12" ng-show="selected.category !== null && selected.book !== null">
 		<span class="col-xs-2" ng-repeat="n in _.range(1, books.categories[selected.category].books[selected.book].chapters + 1)">
-			<a href="/read/{{ books.categories[selected.category].books[selected.book].name }} {{ n }}">
+			<a href="/read/{{ books.categories[selected.category].books[selected.book].osis }}.{{ n }}">
 				<h3 ng-bind="n"></h3>
 			</a>
 		</span>

@@ -81,27 +81,30 @@ angular.module('crimson').controller('SettingsController', ['$scope', function($
 }]);
 
 angular.module('crimson').controller('ReaderController', ['$scope', '$routeParams', '$sce', 'ReaderService', 'NavigateService', function($scope, $routeParams, $sce, ReaderService, NavigateService) {
-    $scope.reference = $routeParams.reference;
+    NavigateService.osis2human($routeParams.reference).then(function(reference) {
+        $scope.reference = reference;        
+    });
     $scope.passage = {};
     $scope.error = null;
 
-    $scope.text = 'Loading...';
+    $scope.text = $sce.trustAsHtml('Loading...');
 
-    $scope.nextChapter = 'John 1';
+    $scope.previousChapter = 'John.1';
+    $scope.nextChapter = 'John.1';
 
-    ReaderService.get($scope.reference).then(function(response) {
+    ReaderService.get($routeParams.reference).then(function(response) {
         $scope.passage = response.data;
         $scope.text = $sce.trustAsHtml($scope.passage.text);
     }, function() {
         $scope.error = 'Could not fetch passage';
     });
 
-    NavigateService.previous($scope.reference).then(function(reference) {
+    NavigateService.previous($routeParams.reference).then(function(reference) {
         $scope.previousChapter = reference;
         ReaderService.get(reference);
     });
 
-    NavigateService.next($scope.reference).then(function(reference) {
+    NavigateService.next($routeParams.reference).then(function(reference) {
         $scope.nextChapter = reference;
         ReaderService.get(reference);
     });
@@ -209,21 +212,35 @@ angular.module('crimson').service('NavigateService', ['$http', '$q', function($h
         return deferred.promise;
     };
 
+    this.osis2human = function(reference) {
+        var deferred = $q.defer();
+        this.get().then(function(books) {
+            var matches = reference.split('.')
+            var book = _.findIndex(flatBooks, {osis: matches[0]});
+            var chapter = parseInt(matches[1]);
+
+            deferred.resolve(flatBooks[book].name + ' ' + chapter);
+        }, function() {
+            deferred.reject();
+        });
+        return deferred.promise;
+    };
+
     this.previous = function(reference) {
         var deferred = $q.defer();
         this.get().then(function(books) {
-            var matches = reference.match(/(.*) (\d+)/);
-            var book = _.findIndex(flatBooks, {name: matches[1]});
-            var chapter = parseInt(matches[2]);
+            var matches = reference.split('.');
+            var book = _.findIndex(flatBooks, {osis: matches[0]});
+            var chapter = parseInt(matches[1]);
 
             if (chapter == 1) {
                 var previousBook = flatBooks[(book - 1) % flatBooks.length];
-                deferred.resolve(previousBook.name + ' ' + previousBook.chapters);          
+                deferred.resolve(previousBook.osis + '.' + previousBook.chapters);          
             } else {
-                deferred.resolve(matches[1] + ' ' + (chapter - 1));
+                deferred.resolve(matches[0] + '.' + (chapter - 1));
             }
         }, function() {
-            deferred.resolve('John 1');
+            deferred.resolve('John.1');
         });
 
         return deferred.promise;
@@ -232,17 +249,17 @@ angular.module('crimson').service('NavigateService', ['$http', '$q', function($h
     this.next = function(reference) {
         var deferred = $q.defer();
         this.get().then(function(books) {
-            var matches = reference.match(/(.*) (\d+)/);
-            var book = _.findIndex(flatBooks, {name: matches[1]});
-            var chapter = parseInt(matches[2]);
+            var matches = reference.split('.');
+            var book = _.findIndex(flatBooks, {osis: matches[0]});
+            var chapter = parseInt(matches[1]);
 
             if (chapter < flatBooks[book].chapters) {
-                deferred.resolve(matches[1] + ' ' + (chapter + 1));
+                deferred.resolve(matches[0] + '.' + (chapter + 1));
             } else {
-                deferred.resolve(flatBooks[(book + 1) % flatBooks.length].name + ' ' + 1);
+                deferred.resolve(flatBooks[(book + 1) % flatBooks.length].osis + '.' + 1);
             }
         }, function() {
-            deferred.resolve('John 1');
+            deferred.resolve('John.1');
         });
 
         return deferred.promise;
@@ -255,7 +272,7 @@ angular.module('crimson').service('NavigateService', ['$http', '$q', function($h
             var category = _.find(response.data.categories, {name: genre});
             var book = _.sample(category.books);
             var chapter = Math.ceil(Math.random() * book.chapters);
-            deferred.resolve(book.name + ' ' + chapter);
+            deferred.resolve(book.osis + '.' + chapter);
         }, function() {
             deferred.reject();
         });
